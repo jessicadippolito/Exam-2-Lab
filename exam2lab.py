@@ -19,7 +19,6 @@ def format_names(names):
         first, last = names[0].split(' ')
         return [f'{last}, {first}', format_names(names[1:])]
 
-print(format_names(["Allen Anderson", "Bruce Baker", "Cook, Claire", "Dunn, David"]))
 
 def sum_a(data):
     total = 0
