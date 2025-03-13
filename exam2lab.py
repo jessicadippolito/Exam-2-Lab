@@ -6,19 +6,16 @@ def print_backwards(word):
     print_backwards(word[1:])
     print(backwards, end='')
 
-def format_names(names):
-    if len(names) == 1:
-        if ',' in names[0]:
-            return names[0]
-        else:
-            first, last = names[0].split(' ')
-            return f'{last}, {first}'
-    elif ',' in names[0]:
-        return [names[0], format_names(names[1:])]
-    else:
-        first, last = names[0].split(' ')
-        return [f'{last}, {first}', format_names(names[1:])]
 
+def format_names(names):
+    if len(names) == 0:
+        return []
+    if ',' in names[0]:
+        new_name = names[0]
+    else:
+        first, last = names[0].split()
+        new_name =  f"{last}, {first}"
+    return [new_name] + format_names(names[1:])
 
 def sum_a(data):
     total = 0
